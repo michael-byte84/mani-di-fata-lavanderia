@@ -7,8 +7,8 @@ const siteData = {
     news: [
         {
             data: "13 giugno 2026",
-            titolo: "Donazione capi usati 2026: tutti i giorni dalle 08:30 alle 13:00.",
-            testo: ""},
+            titolo: "Donazione capi usati 2026",
+            testo: "Per tutto il 2026, la raccolta di abiti usati avverrà dalle 08:00 alle 13:00, dal lunedì al sabato."},
         {
             data: "1 luglio 2026",
             titolo: "Nuovo orario estivo",
@@ -16,7 +16,7 @@ const siteData = {
         },
         {
             data: "1 agosto 2026",
-            titolo: "chiusura per ferie",
+            titolo: "Chiusura per ferie",
             testo: "Vi informiamo che ad agosto saremo aperti esclusivamente la prima settimana, dal 1° all'8 compresi.",
         },
     ],
