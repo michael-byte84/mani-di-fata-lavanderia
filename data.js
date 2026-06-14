@@ -7,22 +7,26 @@ const siteData = {
     news: [
         {
             data: "13 giugno 2026",
-            titolo: "orari la donazione di capi usati",
-            testo: "l'orario per la donazione dei capi usati sarà in orario antimeridiano dalle 08:00 alle 13:00."},
+            titolo: "Nuovo orario per la donazione di capi usati",
+            testo: "La raccolta di capi usati, per tutto il 2026, sarà effettuata solo dalle 08:00 alle 13:00."},
         {
             data: "1 Luglio 2026",
             titolo: "Nuovo orario estivo",
-            testo: "Da oggi osservemo il nuovo orario estivo: Lunedì - Sabato 07:00 - 13:00. Domenica chiuso.",
+            testo: "Da oggi osserveremo il nuovo orario estivo: lun-ven 07:00 - 14:00, sab 07:00 - 13:00. Ad agosto saremo aperti solo nella
+            prima settimana.",}
+        {
+            titolo: "chiuso per ferie"
+            testo: "dall'8 agosto saremo chiusi per ferie"
         }
     ],
 
     // Aggiorna qui gli orari di apertura
-orari: [
-        { giorno: "Lunedì", ore: "07:00 - 13:00" },
-        { giorno: "Martedì", ore: "07:00 - 13:00" },
-        { giorno: "Mercoledì", ore: "07:00 - 13:00" },
-        { giorno: "Giovedì", ore: "07:00 - 13:00" },
-        { giorno: "Venerdì", ore: "07:00 - 13:00" },
+orario: [
+        { giorno: "Lunedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
+        { giorno: "Martedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
+        { giorno: "Mercoledì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
+        { giorno: "Giovedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
+        { giorno: "Venerdì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
         { giorno: "Sabato", ore: "08:00 - 13:00" },
         { giorno: "Domenica", ore: "Chiuso" }
     ]
