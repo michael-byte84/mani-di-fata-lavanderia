@@ -15,9 +15,7 @@ const siteData = {
             testo: "Da oggi osserveremo il nuovo orario estivo: lun-ven 07:00 - 14:00, sab 07:00 - 13:00. Ad agosto saremo aperti solo nella
             prima settimana.",}
         {
-            titolo: "chiuso per ferie"
-            testo: "dall'8 agosto saremo chiusi per ferie"
-        }
+            
     ],
 
     // Aggiorna qui gli orari di apertura
