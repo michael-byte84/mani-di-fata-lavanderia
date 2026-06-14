@@ -18,11 +18,11 @@ const siteData = {
             data: "1 agosto 2026",
             titolo: "chiusura per ferie",
             testo: "Vi informiamo che ad agosto saremo aperti esclusivamente la prima settimana, dal 1° all'8 compresi.",
-        }
+        },
     ],
 
     // Aggiorna qui gli orari di apertura
-orario invernale: [
+orario: [
         { giorno: "Lunedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
         { giorno: "Martedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
         { giorno: "Mercoledì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
