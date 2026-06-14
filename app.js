@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Popolamento degli Orari (Versione Mobile-Friendly)
     const orariContainer = document.getElementById('orari-container');
-    if (siteData.orari) {
-        siteData.orari.forEach(item => {
+    if (siteData.orario) {
+        siteData.orario.forEach(item => {
             const li = document.createElement('li');
             // Su mobile (default) incolonna i dati, su tablet/desktop (sm:) li mette in riga
             li.className = 'py-3 px-3 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1';
