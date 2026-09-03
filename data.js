@@ -11,7 +11,7 @@ const siteData = {
             testo: "Per tutto il 2026, la raccolta di abiti usati avverrà dalle 08:00 alle 13:00, dal lunedì al sabato."},
         {
             data: "1 settembre 2026",
-            titolo: "ripristino orario invernale",
+            titolo: "Ripristino orario invernale",
             testo: "Dal 1 settembre ritorna l'orario consueto: dal lunedì al sabato, dalle 08:00 alle 13:00 e dalle 15:00 alle 19:00. Domenica chiuso.",
         },
     ],
