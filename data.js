@@ -46,7 +46,7 @@ const siteData = {
         {
             titolo: "Sabot UGG in Montone Scamosciato & Shealing",
             descrizione: "Trattamento delicato per pelli scamosciate, spazzolatura della trama, igienizzazione interna e ravvivamento del colore.",
-            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/campus-prima.jpeg?auto=format&fit=crop&w=800&q=80",
+            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/ugg-prima.jpeg?auto=format&fit=crop&w=800&q=80",
             primaNote: "Polvere e aloni d'uso",
             dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/ugg-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
             dopoNote: "Pelo ravvivato & forma ripristinata"
