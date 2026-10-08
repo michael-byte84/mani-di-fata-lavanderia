@@ -25,7 +25,7 @@ const siteData = {
         { giorno: "Mercoledì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
         { giorno: "Giovedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
         { giorno: "Venerdì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
-        { giorno: "Sabato", ore: "08:00 - 13:00 | 15:00 - 19:00" },
+        { giorno: "Sabato", ore: "08:00 - 13:00" },
         { giorno: "Domenica", ore: "Chiuso" }
     ],
 
