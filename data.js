@@ -1,55 +1,43 @@
-// data.js
-const siteData = {
-    phoneNumber: "+393351423360",
-    displayPhone: "335 142 3360",
-    
-    news: [
-        {
-            data: "13 giugno 2026",
-            titolo: "Donazione capi usati 2026",
-            testo: "Per tutto il 2026, la raccolta di abiti usati avverrà dalle 08:00 alle 13:00, dal lunedì al sabato."
-        },
-        {
-            data: "1 settembre 2026",
-            titolo: "Ripristino orario invernale",
-            testo: "Dal 1 settembre 2026 ritorna l'orario consueto: dal lunedì al sabato, dalle 08:00 alle 13:00 e dalle 15:00 alle 19:00; domenica chiuso."
-        }
-    ],
+<!-- SLIDE: Adidas Campus -->
+<div class="min-w-full px-1">
+    <div class="bg-white rounded-3xl p-4 sm:p-5 shadow-soft border border-brand-primary/10">
+        <div class="grid grid-cols-2 gap-3">
+            <div class="relative group overflow-hidden rounded-2xl aspect-square bg-gray-100">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full uppercase z-10 shadow">Prima</span>
+                <img src="./campus-prima.jpeg" alt="Sneaker prima" class="w-full h-full object-cover">
+                <span class="absolute bottom-1.5 left-1.5 right-1.5 text-center bg-black/60 backdrop-blur-sm text-white text-[11px] py-1 rounded font-medium">Sporco & Camoscio spento</span>
+            </div>
+            <div class="relative group overflow-hidden rounded-2xl aspect-square bg-gray-100">
+                <span class="absolute top-2 left-2 bg-emerald-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full uppercase z-10 shadow">Dopo</span>
+                <img src="./campus-dopo.jpg" alt="Sneaker dopo" class="w-full h-full object-cover">
+                <span class="absolute bottom-1.5 left-1.5 right-1.5 text-center bg-black/60 backdrop-blur-sm text-white text-[11px] py-1 rounded font-medium">Camoscio rigenerato</span>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <h4 class="text-base sm:text-lg font-bold text-brand-dark">Sneakers in Camoscio & Pelle</h4>
+            <p class="text-xs sm:text-sm text-gray-500 mt-0.5">Lavaggio a mano, smacchiatura profonda del suede e sbiancamento suola.</p>
+        </div>
+    </div>
+</div>
 
-    orario: [
-        { giorno: "Lunedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
-        { giorno: "Martedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
-        { giorno: "Mercoledì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
-        { giorno: "Giovedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
-        { giorno: "Venerdì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
-        { giorno: "Sabato", ore: "08:00 - 13:00" },
-        { giorno: "Domenica", ore: "Chiuso" }
-    ],
-
-    confronti: [
-        {
-            titolo: "Sandalo Estivo in Pelle & Zeppa",
-            descrizione: "Sanificazione profonda della soletta interna, pulizia dettagliata del fascione e smacchiatura del bordo suola.",
-            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-prima.jpeg?auto=format&fit=crop&w=800&q=80",
-            primaNote: "Soletta e zeppa macchiate",
-            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
-            dopoNote: "Pelle idratata & suola candida"
-        },
-        {
-            titolo: "Sneakers Adidas Campus in Camoscio",
-            descrizione: "Lavaggio a mano specifico per camoscio, rimozione di macchie scure e ripristino dell'effetto vellutato originale.",
-            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/campus-prima.jpeg?auto=format&fit=crop&w=800&q=80",
-            primaNote: "Sporco ostinato & camoscio indurito",
-            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/campus-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
-            dopoNote: "Camoscio rigenerato e suola sbiancata"
-        },
-        {
-            titolo: "Sabot UGG in Montone Scamosciato & Shealing",
-            descrizione: "Trattamento delicato per pelli scamosciate, spazzolatura della trama, igienizzazione interna e ravvivamento del colore.",
-            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/ugg-prima.jpeg?auto=format&fit=crop&w=800&q=80",
-            primaNote: "Polvere e aloni d'uso",
-            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/ugg-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
-            dopoNote: "Pelo ravvivato & forma ripristinata"
-        }
-    ]
-};
+<!-- SLIDE: Sandalo Zeppa -->
+<div class="min-w-full px-1">
+    <div class="bg-white rounded-3xl p-4 sm:p-5 shadow-soft border border-brand-primary/10">
+        <div class="grid grid-cols-2 gap-3">
+            <div class="relative group overflow-hidden rounded-2xl aspect-square bg-gray-100">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full uppercase z-10 shadow">Prima</span>
+                <img src="./sandalo-prima.jpeg" alt="Sandalo prima" class="w-full h-full object-cover">
+                <span class="absolute bottom-1.5 left-1.5 right-1.5 text-center bg-black/60 backdrop-blur-sm text-white text-[11px] py-1 rounded font-medium">Soletta & Zeppa usurate</span>
+            </div>
+            <div class="relative group overflow-hidden rounded-2xl aspect-square bg-gray-100">
+                <span class="absolute top-2 left-2 bg-emerald-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full uppercase z-10 shadow">Dopo</span>
+                <img src="./sandalo-dopo.jpeg" alt="Sandalo dopo" class="w-full h-full object-cover">
+                <span class="absolute bottom-1.5 left-1.5 right-1.5 text-center bg-black/60 backdrop-blur-sm text-white text-[11px] py-1 rounded font-medium">Igienizzato & Rinnovato</span>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <h4 class="text-base sm:text-lg font-bold text-brand-dark">Sandali & Calzature Estive</h4>
+            <p class="text-xs sm:text-sm text-gray-500 mt-0.5">Igienizzazione della soletta interna, pulizia della tomaia e ripristino suola.</p>
+        </div>
+    </div>
+</div>
