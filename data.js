@@ -11,8 +11,8 @@ const siteData = {
         },
         {
             data: "1 settembre 2026",
-            titolo: "Ripristino orario invernale",
-            testo: "Dal 1 settembre 2026 ritorna l'orario consueto: dal lunedì al sabato, dalle 08:00 alle 13:00 e dalle 15:00 alle 19:00; domenica chiuso."
+            titolo: "Ripristino orario consueto",
+            testo: "Dal 1 settembre ritorna l'orario consueto: dal lunedì al sabato, dalle 08:00 alle 13:00 e dalle 15:00 alle 19:00; domenica chiuso."
         }
     ],
 
@@ -26,7 +26,7 @@ const siteData = {
         { giorno: "Domenica", ore: "Chiuso" }
     ],
 
-confronti: [
+    confronti: [
         {
             titolo: "Sandalo Estivo in Pelle & Zeppa",
             descrizione: "Sanificazione profonda della soletta interna, pulizia dettagliata del fascione e smacchiatura del bordo suola.",
@@ -51,7 +51,5 @@ confronti: [
             dopoImg: "./ugg-dopo.jpg",
             dopoNote: "Pelo ravvivato & forma ripristinata"
         }
-    ]
-};
     ]
 };
