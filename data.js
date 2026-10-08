@@ -40,7 +40,7 @@ const siteData = {
             descrizione: "Lavaggio a mano specifico per camoscio, rimozione di macchie scure e ripristino dell'effetto vellutato originale.",
             primaImg: "./campus-prima.jpeg",
             primaNote: "Sporco ostinato & camoscio indurito",
-            dopoImg: "./campus-dopo.jpg",
+            dopoImg: "./campus-dopo.jpeg",
             dopoNote: "Camoscio rigenerato e suola sbiancata"
         },
         {
@@ -48,7 +48,7 @@ const siteData = {
             descrizione: "Trattamento delicato per pelli scamosciate, spazzolatura della trama, igienizzazione interna e ravvivamento del colore.",
             primaImg: "./ugg-prima.jpeg",
             primaNote: "Polvere e aloni d'uso",
-            dopoImg: "./ugg-dopo.jpg",
+            dopoImg: "./ugg-dopo.jpeg",
             dopoNote: "Pelo ravvivato & forma ripristinata"
         }
     ]
