@@ -28,20 +28,20 @@ const siteData = {
 
     confronti: [
         {
-            titolo: "Piumone Invernale in Piuma d'Oca",
-            descrizione: "Lavaggio igienizzante antibatterico profondo, rimozione aloni e ripristino del volume originale.",
+            titolo: "Sandalo Estivo in Pelle & Zeppa",
+            descrizione: "Sanificazione profonda della soletta interna, pulizia dettagliata del fascione e smacchiatura del bordo suola.",
             primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-prima.jpeg?auto=format&fit=crop&w=800&q=80",
-            primaNote: "Ingiallito & compresso",
+            primaNote: "Soletta e zeppa macchiate",
             dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
-            dopoNote: "Bianco ottico & soffice"
+            dopoNote: "Pelle idratata & suola candida"
         },
         {
-            titolo: "Giacca Elegante Lana & Cashmere",
-            descrizione: "Trattamento a secco ecologico per macchie d'olio e caffè senza danneggiare le fibre.",
-            primaImg: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80",
-            primaNote: "Macchie visibili",
-            dopoImg: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
-            dopoNote: "Fibre rigenerate e pulite"
+            titolo: "Sneakers Adidas Campus in Camoscio",
+            descrizione: "Lavaggio a mano specifico per camoscio, rimozione di macchie scure e ripristino dell'effetto vellutato originale.",
+            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/campus-prima.jpeg?auto=format&fit=crop&w=800&q=80",
+            primaNote: "Sporco ostinato & camoscio indurito",
+            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/campus-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
+            dopoNote: "Camoscio rigenerato e suola sbiancata"
         }
     ]
 };
