@@ -1,10 +1,8 @@
 // data.js
 const siteData = {
-    // Numero di telefono formattato per la chiamata diretta
     phoneNumber: "+393351423360",
     displayPhone: "335 142 3360",
     
-    // Avvisi importanti
     news: [
         {
             data: "13 giugno 2026",
@@ -18,7 +16,6 @@ const siteData = {
         }
     ],
 
-    // Orari di apertura
     orario: [
         { giorno: "Lunedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
         { giorno: "Martedì", ore: "08:00 - 13:00 | 15:00 - 19:00" },
@@ -29,8 +26,6 @@ const siteData = {
         { giorno: "Domenica", ore: "Chiuso" }
     ],
 
-    // Immagini e testi per il Carousel Prima & Dopo
-    // (Puoi sostituire gli URL di Unsplash con i link alle tue foto reali)
     confronti: [
         {
             titolo: "Piumone Invernale in Piuma d'Oca",
@@ -41,20 +36,12 @@ const siteData = {
             dopoNote: "Bianco ottico & soffice"
         },
         {
-            titolo: "Giacca Lana & Cashmere",
-            descrizione: "Trattamento a secco ecologico per macchie d'olio e caffè senza rovinare le fibre nobili.",
+            titolo: "Giacca Elegante Lana & Cashmere",
+            descrizione: "Trattamento a secco ecologico per macchie d'olio e caffè senza danneggiare le fibre.",
             primaImg: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80",
-            primaNote: "Macchie scure visibili",
+            primaNote: "Macchie visibili",
             dopoImg: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
-            dopoNote: "Fibre rigenerate e pure"
-        },
-        {
-            titolo: "Tappeto Orientale Pregiato",
-            descrizione: "Lavaggio artigianale ad acqua a temperatura controllata per ravvivare i colori e sanificare la trama.",
-            primaImg: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
-            primaNote: "Tonalità spente e polvere",
-            dopoImg: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
-            dopoNote: "Colori vivi e protetti"
+            dopoNote: "Fibre rigenerate e pulite"
         }
     ]
 };
