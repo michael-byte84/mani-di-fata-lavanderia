@@ -30,9 +30,9 @@ const siteData = {
         {
             titolo: "Piumone Invernale in Piuma d'Oca",
             descrizione: "Lavaggio igienizzante antibatterico profondo, rimozione aloni e ripristino del volume originale.",
-            primaImg: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80",
+            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-prima.jpeg?auto=format&fit=crop&w=800&q=80",
             primaNote: "Ingiallito & compresso",
-            dopoImg: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
+            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
             dopoNote: "Bianco ottico & soffice"
         },
         {
