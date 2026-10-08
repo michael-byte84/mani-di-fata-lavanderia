@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Popolamento Notizie
     const newsContainer = document.getElementById('news-container');
-    if (siteData.news && siteData.news.length > 0) {
+    if (newsContainer && siteData.news && siteData.news.length > 0) {
         siteData.news.forEach(item => {
             const newsEl = document.createElement('div');
             newsEl.className = 'bg-white p-5 rounded-2xl shadow-sm border-l-4 border-brand-primary';
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Popolamento Orari
     const orariContainer = document.getElementById('orari-container');
-    if (siteData.orario) {
+    if (orariContainer && siteData.orario) {
         siteData.orario.forEach(item => {
             const li = document.createElement('li');
             li.className = 'py-3 px-3 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1';
@@ -32,182 +32,82 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Gestione Dati Confronti (Dati predefiniti + Eventuali caricati via Drag & Drop)
-    let userConfronti = [];
-    try {
-        const saved = localStorage.getItem('user_confronti');
-        if (saved) {
-            userConfronti = JSON.parse(saved);
-        }
-    } catch(e) { console.error(e); }
-
-    let allConfronti = [...userConfronti, ...(siteData.confronti || [])];
-
-    // 4. Carousel Logic
+    // 3. Carousel Prima & Dopo
     const track = document.getElementById('carousel-track');
     const dotsContainer = document.getElementById('carousel-dots');
     const prevBtn = document.getElementById('prev-slide');
     const nextBtn = document.getElementById('next-slide');
     let currentIndex = 0;
 
-    function renderCarousel() {
+    if (track && siteData.confronti && siteData.confronti.length > 0) {
         track.innerHTML = '';
-        dotsContainer.innerHTML = '';
-        if (allConfronti.length === 0) return;
+        if (dotsContainer) dotsContainer.innerHTML = '';
 
-        allConfronti.forEach((item, index) => {
+        siteData.confronti.forEach((item, index) => {
             const slide = document.createElement('div');
             slide.className = 'min-w-full px-2';
             slide.innerHTML = `
                 <div class="bg-white rounded-3xl p-4 sm:p-5 shadow-soft border border-brand-primary/10">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="relative group overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="relative group overflow-hidden rounded-2xl aspect-square bg-gray-100">
+                            <span class="absolute top-2 left-2 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full uppercase z-10 shadow">
                                 Prima
                             </span>
-                            <img src="${item.primaImg}" alt="Prima" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                            <span class="absolute bottom-2 left-2 right-2 text-center bg-black/60 backdrop-blur-sm text-white text-xs py-1.5 px-2 rounded-lg font-medium">
-                                ${item.primaNote || 'Prima del trattamento'}
+                            <img src="${item.primaImg}" alt="Prima: ${item.titolo}" class="w-full h-full object-cover">
+                            <span class="absolute bottom-1.5 left-1.5 right-1.5 text-center bg-black/60 backdrop-blur-sm text-white text-[11px] py-1 rounded font-medium">
+                                ${item.primaNote || 'Prima'}
                             </span>
                         </div>
-                        <div class="relative group overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100">
-                            <span class="absolute top-3 left-3 bg-emerald-500/90 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow">
-                                Dopo Mani di Fata
+                        <div class="relative group overflow-hidden rounded-2xl aspect-square bg-gray-100">
+                            <span class="absolute top-2 left-2 bg-emerald-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full uppercase z-10 shadow">
+                                Dopo
                             </span>
-                            <img src="${item.dopoImg}" alt="Dopo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                            <span class="absolute bottom-2 left-2 right-2 text-center bg-black/60 backdrop-blur-sm text-white text-xs py-1.5 px-2 rounded-lg font-medium">
-                                ${item.dopoNote || 'Risultato finale'}
+                            <img src="${item.dopoImg}" alt="Dopo: ${item.titolo}" class="w-full h-full object-cover">
+                            <span class="absolute bottom-1.5 left-1.5 right-1.5 text-center bg-black/60 backdrop-blur-sm text-white text-[11px] py-1 rounded font-medium">
+                                ${item.dopoNote || 'Dopo'}
                             </span>
                         </div>
                     </div>
                     <div class="mt-4 text-center">
-                        <h4 class="text-lg font-bold text-brand-dark">${item.titolo}</h4>
-                        <p class="text-sm text-gray-500 mt-1">${item.descrizione}</p>
+                        <h4 class="text-base sm:text-lg font-bold text-brand-dark">${item.titolo}</h4>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-1">${item.descrizione}</p>
                     </div>
                 </div>
             `;
             track.appendChild(slide);
 
-            const dot = document.createElement('button');
-            dot.className = 'w-3 h-3 rounded-full transition-all bg-gray-300';
-            dot.addEventListener('click', () => updateCarousel(index));
-            dotsContainer.appendChild(dot);
+            if (dotsContainer) {
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full transition-all bg-gray-300';
+                dot.addEventListener('click', () => updateCarousel(index));
+                dotsContainer.appendChild(dot);
+            }
         });
 
+        function updateCarousel(index) {
+            currentIndex = (index + siteData.confronti.length) % siteData.confronti.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            if (dotsContainer) {
+                const dots = dotsContainer.querySelectorAll('button');
+                dots.forEach((d, i) => {
+                    d.className = i === currentIndex 
+                        ? 'w-8 h-3 rounded-full transition-all bg-brand-primary' 
+                        : 'w-3 h-3 rounded-full transition-all bg-gray-300';
+                });
+            }
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
         updateCarousel(0);
+
+        // Scorrimento automatico ogni 5 secondi
+        setInterval(() => {
+            updateCarousel(currentIndex + 1);
+        }, 5000);
     }
 
-    function updateCarousel(index) {
-        if (allConfronti.length === 0) return;
-        currentIndex = (index + allConfronti.length) % allConfronti.length;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        const dots = dotsContainer.querySelectorAll('button');
-        dots.forEach((d, i) => {
-            d.className = i === currentIndex 
-                ? 'w-8 h-3 rounded-full transition-all bg-brand-primary' 
-                : 'w-3 h-3 rounded-full transition-all bg-gray-300';
-        });
-    }
-
-    prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
-    nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
-    renderCarousel();
-
-    // 5. Drag & Drop Gestione File
-    let primaBase64 = null;
-    let dopoBase64 = null;
-
-    function setupDropZone(dropZoneId, inputId, previewId, onLoaded) {
-        const dropZone = document.getElementById(dropZoneId);
-        const fileInput = document.getElementById(inputId);
-        const preview = document.getElementById(previewId);
-
-        const handleFile = (file) => {
-            if (!file || !file.type.startsWith('image/')) return;
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const result = e.target.result;
-                preview.src = result;
-                preview.classList.remove('hidden');
-                dropZone.querySelector('.placeholder-text').classList.add('hidden');
-                onLoaded(result);
-            };
-            reader.readAsDataURL(file);
-        };
-
-        dropZone.addEventListener('click', () => fileInput.click());
-        fileInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
-
-        ['dragenter', 'dragover'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.add('border-brand-primary', 'bg-violet-50');
-            }, false);
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('border-brand-primary', 'bg-violet-50');
-            }, false);
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const file = dt.files[0];
-            handleFile(file);
-        });
-    }
-
-    setupDropZone('dropzone-prima', 'input-prima', 'preview-prima', (b64) => { primaBase64 = b64; });
-    setupDropZone('dropzone-dopo', 'input-dopo', 'preview-dopo', (b64) => { dopoBase64 = b64; });
-
-    // Salva nuova coppia di foto
-    const saveComparisonBtn = document.getElementById('save-comparison-btn');
-    if (saveComparisonBtn) {
-        saveComparisonBtn.addEventListener('click', () => {
-            if (!primaBase64 || !dopoBase64) {
-                alert("Trascina o carica sia la foto del PRIMA che quella del DOPO.");
-                return;
-            }
-
-            const titolo = document.getElementById('upload-titolo').value.trim() || "Nuovo Trattamento";
-            const desc = document.getElementById('upload-desc').value.trim() || "Cura e pulizia artigianale Mani di Fata.";
-
-            const newEntry = {
-                titolo: titolo,
-                descrizione: desc,
-                primaImg: primaBase64,
-                primaNote: "Prima",
-                dopoImg: dopoBase64,
-                dopoNote: "Dopo Mani di Fata"
-            };
-
-            userConfronti.unshift(newEntry);
-            try {
-                localStorage.setItem('user_confronti', JSON.stringify(userConfronti));
-            } catch(e) {
-                console.warn("Spazio storage locale limitato:", e);
-            }
-
-            allConfronti = [...userConfronti, ...(siteData.confronti || [])];
-            renderCarousel();
-            updateCarousel(0);
-
-            // Resetta form
-            document.getElementById('upload-titolo').value = '';
-            document.getElementById('upload-desc').value = '';
-            document.getElementById('preview-prima').classList.add('hidden');
-            document.getElementById('preview-dopo').classList.add('hidden');
-            document.querySelectorAll('.placeholder-text').forEach(el => el.classList.remove('hidden'));
-            primaBase64 = null;
-            dopoBase64 = null;
-
-            alert("Confronto aggiunto con successo al carosello!");
-        });
-    }
-
-    // Telefono dinamico
+    // 4. Collegamenti Chiamata Dinamica
     document.querySelectorAll('.dynamic-tel').forEach(link => {
         link.href = `tel:${siteData.phoneNumber}`;
     });
