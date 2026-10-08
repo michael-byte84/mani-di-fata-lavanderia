@@ -54,7 +54,7 @@
                 Mani di Fata sui tuoi tessuti.
             </h1>
             <p class="text-lg text-brand-dark/70 mb-8 font-semibold leading-relaxed">
-                Igiene profonda, delicatezza assoluta e un profumo inconfondibile di pulito. Per qualsiasi informazione o preventivo, siamo a tua disposizione per telefono.
+                Igiene profonda, delicatezza assoluta e un profumo inconfondibile di pulito. Chiamaci direttamente per ogni informazione o preventivo.
             </p>
             
             <a href="#" class="dynamic-tel bg-brand-primary hover:bg-violet-700 text-white font-extrabold py-4 px-8 rounded-3xl shadow-soft transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center gap-3 text-lg">
@@ -90,7 +90,7 @@
             </section>
         </div>
 
-        <!-- Colonna Destra: Carosello Prima/Dopo & Mappa -->
+        <!-- Colonna Destra: Carosello + Box Drag & Drop + Mappa -->
         <div class="space-y-10">
             <!-- Carousel Prima & Dopo -->
             <section>
@@ -99,7 +99,6 @@
                         <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
                         Prima & Dopo il Lavaggio
                     </h2>
-                    <!-- Frecce controllo -->
                     <div class="flex items-center gap-2">
                         <button id="prev-slide" aria-label="Precedente" class="p-2 rounded-full bg-white shadow hover:bg-gray-100 text-brand-dark transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -110,11 +109,56 @@
                     </div>
                 </div>
 
-                <!-- Contenitore Carousel -->
                 <div class="relative overflow-hidden rounded-3xl">
                     <div id="carousel-track" class="flex transition-transform duration-500 ease-out"></div>
                 </div>
                 <div id="carousel-dots" class="flex justify-center items-center gap-2 mt-4"></div>
+            </section>
+
+            <!-- Box Drag & Drop per Caricare Foto -->
+            <section class="bg-white p-6 rounded-3xl shadow-soft border border-brand-primary/20">
+                <h3 class="text-xl font-bold text-brand-dark mb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    Aggiungi foto con Drag & Drop
+                </h3>
+                <p class="text-xs text-gray-500 mb-4">Trascina qui le immagini dal tuo computer per vederle comparire subito nel carosello.</p>
+
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <!-- Dropzone Prima -->
+                    <div>
+                        <span class="block text-xs font-bold text-red-500 uppercase mb-1">Foto PRIMA</span>
+                        <div id="dropzone-prima" class="cursor-pointer border-2 border-dashed border-gray-300 hover:border-brand-primary rounded-2xl h-36 flex flex-col items-center justify-center p-2 text-center transition overflow-hidden relative">
+                            <input type="file" id="input-prima" accept="image/*" class="hidden">
+                            <img id="preview-prima" class="w-full h-full object-cover hidden rounded-xl" alt="Preview Prima">
+                            <div class="placeholder-text">
+                                <svg class="w-6 h-6 mx-auto text-gray-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                <span class="text-xs text-gray-500 font-medium">Trascina o clicca</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropzone Dopo -->
+                    <div>
+                        <span class="block text-xs font-bold text-emerald-500 uppercase mb-1">Foto DOPO</span>
+                        <div id="dropzone-dopo" class="cursor-pointer border-2 border-dashed border-gray-300 hover:border-brand-primary rounded-2xl h-36 flex flex-col items-center justify-center p-2 text-center transition overflow-hidden relative">
+                            <input type="file" id="input-dopo" accept="image/*" class="hidden">
+                            <img id="preview-dopo" class="w-full h-full object-cover hidden rounded-xl" alt="Preview Dopo">
+                            <div class="placeholder-text">
+                                <svg class="w-6 h-6 mx-auto text-gray-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                <span class="text-xs text-gray-500 font-medium">Trascina o clicca</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 mb-4">
+                    <input type="text" id="upload-titolo" placeholder="Nome del capo (es. Trapunta in lana)" class="w-full text-xs sm:text-sm px-3 py-2 border rounded-xl outline-none focus:border-brand-primary">
+                    <input type="text" id="upload-desc" placeholder="Descrizione breve del lavaggio" class="w-full text-xs sm:text-sm px-3 py-2 border rounded-xl outline-none focus:border-brand-primary">
+                </div>
+
+                <button id="save-comparison-btn" class="w-full bg-brand-primary hover:bg-violet-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2 shadow-sm">
+                    Aggiungi al Carosello
+                </button>
             </section>
 
             <!-- Dove Siamo -->
@@ -151,13 +195,12 @@
         </div>
     </footer>
 
-    <!-- Floating Call Button (FAB) -->
+    <!-- FAB Chiamata Rapida -->
     <a href="#" aria-label="Chiama la lavanderia" class="dynamic-tel fixed bottom-6 right-6 bg-brand-primary text-white p-4 rounded-full shadow-2xl hover:bg-violet-700 transition-all transform hover:scale-110 z-50 flex items-center justify-center">
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
     </a>
 
-    <!-- Script files -->
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="data.js?v=3"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>
