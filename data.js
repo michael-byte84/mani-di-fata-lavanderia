@@ -26,30 +26,32 @@ const siteData = {
         { giorno: "Domenica", ore: "Chiuso" }
     ],
 
-    confronti: [
+confronti: [
         {
             titolo: "Sandalo Estivo in Pelle & Zeppa",
             descrizione: "Sanificazione profonda della soletta interna, pulizia dettagliata del fascione e smacchiatura del bordo suola.",
-            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-prima.jpeg?auto=format&fit=crop&w=800&q=80",
+            primaImg: "./sandalo-prima.jpeg",
             primaNote: "Soletta e zeppa macchiate",
-            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/sandalo-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
+            dopoImg: "./sandalo-dopo.jpeg",
             dopoNote: "Pelle idratata & suola candida"
         },
         {
             titolo: "Sneakers Adidas Campus in Camoscio",
             descrizione: "Lavaggio a mano specifico per camoscio, rimozione di macchie scure e ripristino dell'effetto vellutato originale.",
-            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/campus-prima.jpeg?auto=format&fit=crop&w=800&q=80",
+            primaImg: "./campus-prima.jpeg",
             primaNote: "Sporco ostinato & camoscio indurito",
-            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/campus-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
+            dopoImg: "./campus-dopo.jpg",
             dopoNote: "Camoscio rigenerato e suola sbiancata"
         },
         {
-            titolo: "Sabot UGG in Montone Scamosciato & Shealing",
+            titolo: "Sabot UGG in Montone Scamosciato & Shearling",
             descrizione: "Trattamento delicato per pelli scamosciate, spazzolatura della trama, igienizzazione interna e ravvivamento del colore.",
-            primaImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/ugg-prima.jpeg?auto=format&fit=crop&w=800&q=80",
+            primaImg: "./ugg-prima.jpeg",
             primaNote: "Polvere e aloni d'uso",
-            dopoImg: "https://github.com/michael-byte84/mani-di-fata-lavanderia/blob/main/ugg-dopo.jpeg?auto=format&fit=crop&w=800&q=80",
+            dopoImg: "./ugg-dopo.jpg",
             dopoNote: "Pelo ravvivato & forma ripristinata"
         }
+    ]
+};
     ]
 };
